@@ -7,6 +7,8 @@ class StudentCard {
     string surname;
     string groupName;
     string dataIntroduction;
+
+    // built in class StudentInfo
     class StudentInfo {
         string* listOfLection;
         int* rating;
@@ -36,7 +38,9 @@ class StudentCard {
 public:
     StudentCard();
     StudentCard(const char* _name, const char* _surname, const char* group, const char* _dataIntroduction);
+    // add item for this student
     void addItemToStudent(const char* item, int ratirngOfItem);
+    // remove item for this student
     void removeItem(const char* item);
     friend ostream& operator<<(ostream& output, const StudentCard& stdCard);
 };

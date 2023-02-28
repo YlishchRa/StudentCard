@@ -1,7 +1,6 @@
 #include "StudentCard.h"
 
 StudentCard::StudentInfo::StudentInfo() {}
-
 StudentCard::StudentInfo::StudentInfo(int size)
     : listOfLection{new string[size]}, rating{new int[size]}, numberOfItems{0}, maxListOfItem{30}
 {
@@ -15,6 +14,7 @@ void StudentCard::StudentInfo::addItem(const char* item, int ratingItem)
     if (numberOfItems + 1 == maxListOfItem) {
         string* tmpList = new string[maxListOfItem + 1];
         int* tmpRating = new int[maxListOfItem + 1];
+
         for (int i = 0; i < maxListOfItem; i++) {
             tmpList[i] = listOfLection[i];
             tmpRating[i] = rating[i];
