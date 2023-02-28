@@ -10,12 +10,21 @@ void StudentCard::StudentInfo::addItem(const char* item, int ratingItem)
 {
     if (listOfLection == nullptr)
         return;
-
-    if (numberOfItems + 1 == maxListOfItem) {
+    for (int  i = 0; i < numberOfItems; i++)
+    {
+        if(listOfLection[i] == item)
+        {
+            cout << "This item is already here\n" << endl;
+            return;
+        }
+    }
+    if (numberOfItems + 1 == maxListOfItem)
+    {
         string* tmpList = new string[maxListOfItem + 1];
         int* tmpRating = new int[maxListOfItem + 1];
 
-        for (int i = 0; i < maxListOfItem; i++) {
+        for (int i = 0; i < maxListOfItem; i++)
+        {
             tmpList[i] = listOfLection[i];
             tmpRating[i] = rating[i];
         }
@@ -33,7 +42,8 @@ void StudentCard::StudentInfo::addItem(const char* item, int ratingItem)
         numberOfItems++;
     }
 
-    else {
+    else
+    {
         listOfLection[numberOfItems] = item;
         rating[numberOfItems] = ratingItem;
         numberOfItems++;
@@ -43,14 +53,27 @@ void StudentCard::StudentInfo::addItem(const char* item, int ratingItem)
 void StudentCard::StudentInfo::removeItem(const char* item)
 {
     int index = 0;
-    for (int i = 0; i < numberOfItems; i++) {
-        if (listOfLection[i] == item) {
+    for (int i = 0; i < numberOfItems; i++)
+    {
+        if (listOfLection[i] == item)
+        {
             index = i;
             break;
         }
     }
 
-    for (int i = index; i < numberOfItems; i++) {
+
+    if(index == 0)
+    {
+        cout << "This item isn`t here "  << endl;
+        return;
+    }
+
+
+
+
+    for (int i = index; i < numberOfItems; i++)
+    {
         listOfLection[i] = listOfLection[i + 1];
         rating[i] = rating[i + 1];
     }
@@ -82,6 +105,9 @@ void StudentCard::removeItem(const char* item)
 {
     studentInfo.removeItem(item);
 }
+
+string StudentCard::getName()
+ { return name; }
 
 ostream& operator<<(ostream& output, const StudentCard& stdCard)
 {

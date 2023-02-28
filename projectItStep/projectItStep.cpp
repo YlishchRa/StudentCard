@@ -1,6 +1,6 @@
 
-#include <iostream>
 #include "StudentCard.h"
+#include <iostream>
 using namespace std;
 
 int main()
@@ -27,14 +27,15 @@ int main()
     students[2].addItemToStudent("Gym", 4);
     students[2].addItemToStudent("Geo Physics", 5);
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++)
+    {
         cout << students[i];
     }
 
-
-
     students[1].removeItem("English");
-      for (int i = 0; i < 3; i++) {
+
+    for (int i = 0; i < 3; i++)
+    {
         cout << students[i];
     }
     return 0;

@@ -2,14 +2,16 @@
 #include <iostream>
 using namespace std;
 
-class StudentCard {
+class StudentCard
+{
     string name;
     string surname;
     string groupName;
     string dataIntroduction;
 
     // built in class StudentInfo
-    class StudentInfo {
+    class StudentInfo
+    {
         string* listOfLection;
         int* rating;
         int numberOfItems;
@@ -20,7 +22,8 @@ class StudentCard {
         StudentInfo(int size);
         friend ostream& operator<<(ostream& output, const StudentInfo& stdInf)
         {
-            for (int i = 0; i < stdInf.numberOfItems; i++) {
+            for (int i = 0; i < stdInf.numberOfItems; i++)
+            {
                 output << "Name of item: " << stdInf.listOfLection[i] << "\t"
                        << "Rating of item: " << stdInf.rating[i] << "\n\t";
             }
@@ -30,7 +33,6 @@ class StudentCard {
         void addItem(const char* item, int ratingItem);
 
         void removeItem(const char* item);
-
         ~StudentInfo();
     };
     StudentInfo studentInfo;
@@ -43,4 +45,5 @@ public:
     // remove item for this student
     void removeItem(const char* item);
     friend ostream& operator<<(ostream& output, const StudentCard& stdCard);
+    string getName();
 };

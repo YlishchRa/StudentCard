@@ -19,7 +19,7 @@ AlwaysBreakTemplateDeclarations: true
 BinPackArguments: true
 BinPackParameters: true
 BreakBeforeBinaryOperators: false
-BreakBeforeBraces: Stroustrup
+BreakBeforeBraces: Allman
 BreakBeforeTernaryOperators: true
 ColumnLimit: 120
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
